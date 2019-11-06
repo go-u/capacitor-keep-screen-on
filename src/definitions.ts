@@ -5,5 +5,13 @@ declare module "@capacitor/core" {
 }
 
 export interface CapacitorKeepScreenOnPlugin {
-  echo(options: { value: string }): Promise<{value: string}>;
+  enable(): Promise<SetResult>;
+  disable(): Promise<SetResult>;
 }
+
+export class State{
+  constructor(public isEnabled: boolean) {
+  }
+}
+
+export type SetResult = State
