@@ -1,5 +1,5 @@
 import { WebPlugin } from '@capacitor/core';
-import { CapacitorKeepScreenOnPlugin } from './definitions';
+import {CapacitorKeepScreenOnPlugin, SetResult} from './definitions';
 
 export class CapacitorKeepScreenOnWeb extends WebPlugin implements CapacitorKeepScreenOnPlugin {
   constructor() {
@@ -9,9 +9,12 @@ export class CapacitorKeepScreenOnWeb extends WebPlugin implements CapacitorKeep
     });
   }
 
-  async echo(options: { value: string }): Promise<{value: string}> {
-    console.log('ECHO', options);
-    return options;
+  async enable(): Promise<SetResult> {
+    return Promise.resolve({ isEnabled: undefined });
+  }
+
+  async disable(): Promise<SetResult> {
+    return Promise.resolve({ isEnabled: undefined });
   }
 }
 
