@@ -1,0 +1,7 @@
+{
+  "appId": "com.demo.capacitor",
+  "appName": "Demo App",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "www"
+}
