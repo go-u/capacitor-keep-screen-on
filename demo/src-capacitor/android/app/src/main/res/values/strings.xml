@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Demo App</string>
+    <string name="title_activity_main">Demo App</string>
+    <string name="package_name">com.demo.capacitor</string>
+    <string name="custom_url_scheme">com.demo.capacitor</string>
+</resources>

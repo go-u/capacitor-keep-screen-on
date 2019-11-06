@@ -3,5 +3,8 @@
   "appName": "Demo App",
   "bundledWebRuntime": false,
   "npmClient": "yarn",
-  "webDir": "www"
+  "webDir": "www",
+  "server": {
+    "url": "http://192.168.10.140:8080"
+  }
 }
