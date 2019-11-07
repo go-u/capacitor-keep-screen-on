@@ -13,7 +13,7 @@ const { CapacitorKeepScreenOn } = Plugins
 export default {
   name: 'PageIndex',
   methods: {
-    enable: function (bool) {
+    enable: function () {
       CapacitorKeepScreenOn.enable()
         .then((res) => {
           console.log(res)
@@ -21,7 +21,7 @@ export default {
           console.log(err)
         })
     },
-    disable: function (bool) {
+    disable: function () {
       CapacitorKeepScreenOn.disable()
         .then((res) => {
           console.log(res)
