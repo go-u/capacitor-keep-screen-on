@@ -2,7 +2,7 @@
 <h1 align="center">capacitor-keep-screen-on</h1>
 
 # Documentation
-[English versione here](https://github.com/go-u/capacitor-keep-screen-on/docs/en)
+[English versione here](https://github.com/go-u/capacitor-keep-screen-on/tree/master/docs/en)
 
 # What's this?
 画面の自動オフを防ぐためのCapacitorプラグインです。  
