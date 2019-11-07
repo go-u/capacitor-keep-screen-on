@@ -2,33 +2,33 @@
 <h1 align="center">capacitor-keep-screen-on</h1>
 
 # Documentation
-[Japanese versione here](https://github.com/go-u/capacitor-keep-screen-on/tree/master/docs/ja)
+[English versione here](https://github.com/go-u/capacitor-keep-screen-on/tree/master/docs/en)
 
 # What's this?
-Capacitor plugin to prevent automatic screen off.
+画面の自動オフを防ぐためのCapacitorプラグインです。  
 
 # Implementations
 ## Android
-`FLAG_KEEP_SCREEN_ON` is used.   
-This is the recommended method described in [official documentation](https://developer.android.com/training/scheduling/wakelock#screen).
+`FLAG_KEEP_SCREEN_ON` を利用しています。  
+これは公式ドキュメント[画面をオンのままにする](https://developer.android.com/training/scheduling/wakelock#screen)に記載された推奨方法です。
 
 ## iOS(実装中)
-`UIApplication.shared.isIdleTimerDisabled` is used.     
-[This is equivalent](https://developer.apple.com/documentation/uikit/uiapplication/1623070-isidletimerdisabled) to Android's `FLAG_KEEP_SCREEN_ON` 
+`UIApplication.shared.isIdleTimerDisabled` を利用しています。  
+これはAndroidの `FLAG_KEEP_SCREEN_ON` に[相当する方法](https://developer.apple.com/documentation/uikit/uiapplication/1623070-isidletimerdisabled)です。
 
 # Set up
-Install Plugin
+プラグインのインストール
 ```
 npm install capacitor-keep-screen-on
 ```
-Sync to Capacitor project
+Capacitorプロジェクトに同期
 ```
 npx cap sync android|ios
 ```
 
-Add code (Android)
-Add the following to `MainActivity.java`
-(Receiver is in MainActivity for the convenience of the plugin)
+コードの追加(Android)  
+`MainActivity.java` に以下を追加  
+(プラグインの都合上ReceiverをMainActivityに記載)
 
 ```
 // import
@@ -91,11 +91,11 @@ public class MainActivity extends BridgeActivity {
 ```
 
 # Usage
-Just use two methods to enable / disable.
+有効化/無効化のための２つのメソッドを利用するだけです。
 - `enable()`  
 - `disable()`
   
-This switches the following flags natively:
+これはネイティブ上で以下のフラグを切り替えています。
 - Android: `FLAG_KEEP_SCREEN_ON`
 - iOS: `UIApplication.shared.isIdleTimerDisabled`
 
@@ -111,6 +111,6 @@ CapacitorKeepScreenOn.disable()
 ```
 
 # Recommeded Usage
-For example, consider the following when using this plugin with video player.
-- `Enable()` at start of playback
-- `Disable()` at end of playback
+例えば動画再生にこのプラグインを使う場合は以下のような配慮をしましょう。  
+- 再生開始時に`enable()`
+- 再生終了時に`disable()`
