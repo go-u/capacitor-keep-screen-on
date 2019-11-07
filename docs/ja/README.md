@@ -53,38 +53,27 @@ public class MainActivity extends BridgeActivity {
        add(CapacitorKeepScreenOn.class);
     }});
 
-    // For KEEP_SCREEN_ON plugin
-    // Register EnableKeepScreenOnReceiver
-    if(this.enableKeepScreenOnReceiver == null) {
-      IntentFilter intentFilter = new IntentFilter(CapacitorKeepScreenOn.BROADCAST_KEY_ENABLE_KEEP_SCREEN_ON);
-      this.enableKeepScreenOnReceiver = new EnableKeepScreenOnReceiver();
-      LocalBroadcastManager.getInstance(this).registerReceiver(this.enableKeepScreenOnReceiver, intentFilter);
-    }
-    // Register DisableKeepScreenOnReceiver
-    if(this.disableKeepScreenOnReceiver == null) {
-      IntentFilter intentFilter = new IntentFilter(CapacitorKeepScreenOn.BROADCAST_KEY_DISABLE_KEEP_SCREEN_ON);
-      this.disableKeepScreenOnReceiver = new DisableKeepScreenOnReceiver();
-      LocalBroadcastManager.getInstance(this).registerReceiver(this.disableKeepScreenOnReceiver, intentFilter);
+    // For KEEP_SCREEN_ON plugin, Register eepScreenOnPluginReceiver
+    if(this.keepScreenOnPluginReceiver == null) {
+      IntentFilter intentFilter = new IntentFilter(CapacitorKeepScreenOn.BROADCAST_KEY_KEEP_SCREEN_ON_PLUGIN);
+      this.keepScreenOnPluginReceiver = new KeepScreenOnPluginReceiver();
+      LocalBroadcastManager.getInstance(this).registerReceiver(this.keepScreenOnPluginReceiver, intentFilter);
     }
   }
 
-  private EnableKeepScreenOnReceiver enableKeepScreenOnReceiver = null;
-  public class EnableKeepScreenOnReceiver extends BroadcastReceiver {
+  private KeepScreenOnPluginReceiver keepScreenOnPluginReceiver = null;
+  public class KeepScreenOnPluginReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent)
     {
       // todo: remove this test message
       // new AlertDialog.Builder(MainActivity.this).setTitle("plugin register test").setMessage("this is test message").setPositiveButton("OK", null).show();
-      getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-    }
-  }
-
-  private DisableKeepScreenOnReceiver disableKeepScreenOnReceiver = null;
-  public class DisableKeepScreenOnReceiver extends BroadcastReceiver {
-    @Override
-    public void onReceive(Context context, Intent intent)
-    {
-      getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+      Boolean mode = intent.getBooleanExtra("MODE", false);
+      if (mode) {
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+      } else {
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+      }
     }
   }
 }
