@@ -14,26 +14,26 @@ import android.support.v4.content.LocalBroadcastManager;
 public class CapacitorKeepScreenOn extends Plugin {
 
     // Keys For LoacalBroadcast
-    public static final String BROADCAST_KEY_ENABLE_KEEP_SCREEN_ON = "ENABLE_KEEP_SCREEN_ON";
-    public static final String BROADCAST_KEY_DISABLE_KEEP_SCREEN_ON = "DISABLE_KEEP_SCREEN_ON";
+    public static final String BROADCAST_KEY_KEEP_SCREEN_ON_PLUGIN = "KEEP_SCREEN_ON_PLUGIN";
 
     @PluginMethod()
     public void enable(PluginCall call) {
-        Intent localBroadCastIntent = new Intent(BROADCAST_KEY_ENABLE_KEEP_SCREEN_ON);
-        dispatchIntent(call, localBroadCastIntent);
+        Intent localBroadCastIntent = new Intent(BROADCAST_KEY_KEEP_SCREEN_ON_PLUGIN);
+        localBroadCastIntent.putExtra("MODE", true);
+        dispatchIntent(call, localBroadCastIntent, true);
     }
 
     @PluginMethod()
     public void disable(PluginCall call) {
-        Intent localBroadCastIntent = new Intent(BROADCAST_KEY_DISABLE_KEEP_SCREEN_ON);
-        dispatchIntent(call, localBroadCastIntent);
+        Intent localBroadCastIntent = new Intent(BROADCAST_KEY_KEEP_SCREEN_ON_PLUGIN);
+        localBroadCastIntent.putExtra("MODE", false);
+        dispatchIntent(call, localBroadCastIntent, false);
     }
 
-    private void dispatchIntent(PluginCall call, Intent intent) {
+    private void dispatchIntent(PluginCall call, Intent intent, Boolean mode) {
         Boolean hasDispatched = LocalBroadcastManager.getInstance(this.getContext()).sendBroadcast(intent);
         JSObject ret = new JSObject();
         if (hasDispatched) {
-            Boolean mode = (BROADCAST_KEY_ENABLE_KEEP_SCREEN_ON.equals(intent.toString()));
             ret.put("isEnabled", mode);
             call.success(ret);
         } else {
