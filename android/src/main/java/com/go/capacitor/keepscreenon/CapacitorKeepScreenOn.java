@@ -18,20 +18,19 @@ public class CapacitorKeepScreenOn extends Plugin {
 
     @PluginMethod()
     public void enable(PluginCall call) {
-        Intent localBroadCastIntent = new Intent(BROADCAST_KEY_KEEP_SCREEN_ON_PLUGIN);
-        localBroadCastIntent.putExtra("MODE", true);
-        dispatchIntent(call, localBroadCastIntent, true);
+        dispatch(call, true);
     }
 
     @PluginMethod()
     public void disable(PluginCall call) {
-        Intent localBroadCastIntent = new Intent(BROADCAST_KEY_KEEP_SCREEN_ON_PLUGIN);
-        localBroadCastIntent.putExtra("MODE", false);
-        dispatchIntent(call, localBroadCastIntent, false);
+        dispatch(call, false);
     }
 
-    private void dispatchIntent(PluginCall call, Intent intent, Boolean mode) {
-        Boolean hasDispatched = LocalBroadcastManager.getInstance(this.getContext()).sendBroadcast(intent);
+    private void dispatch(PluginCall call, Boolean mode) {
+        Intent localBroadCastIntent = new Intent(BROADCAST_KEY_KEEP_SCREEN_ON_PLUGIN);
+        localBroadCastIntent.putExtra("MODE", mode);
+
+        Boolean hasDispatched = LocalBroadcastManager.getInstance(this.getContext()).sendBroadcast(localBroadCastIntent);
         JSObject ret = new JSObject();
         if (hasDispatched) {
             ret.put("isEnabled", mode);
