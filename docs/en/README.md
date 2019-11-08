@@ -1,7 +1,7 @@
-[![MIT License](http://img.shields.io/badge/Capacitor-Android-green.svg?style=flat)](LICENSE)
-[![MIT License](http://img.shields.io/badge/Capacitor-iOS-silver.svg?style=flat)](LICENSE)
-[![MIT License](http://img.shields.io/badge/Capacitor-Javascript-gold.svg?style=flat)](LICENSE)
-[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+[![Android](https://img.shields.io/badge/Capacitor-Android-green.svg?style=flat)](https://capacitor.ionicframework.com/)
+[![iOS](https://img.shields.io/badge/Capacitor-iOS-silver.svg?style=flat)](https://capacitor.ionicframework.com/)
+[![Javascript](https://img.shields.io/badge/Capacitor-Javascript-gold.svg?style=flat)](https://capacitor.ionicframework.com/)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 <p align="center"><img src="../logo.png" alt="Capacitor Keep Screen On logo"></p>
 <h1 align="center">capacitor-keep-screen-on</h1>
