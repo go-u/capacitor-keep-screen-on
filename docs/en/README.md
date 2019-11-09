@@ -17,21 +17,24 @@ Capacitor plugin to prevent automatic screen off.
 `FLAG_KEEP_SCREEN_ON` is used.   
 This is the recommended method described in [official documentation](https://developer.android.com/training/scheduling/wakelock#screen).
 
-## iOS(実装中)
+## iOS
 `UIApplication.shared.isIdleTimerDisabled` is used.     
 [This is equivalent](https://developer.apple.com/documentation/uikit/uiapplication/1623070-isidletimerdisabled) to Android's `FLAG_KEEP_SCREEN_ON` 
 
 # Set up
-Install Plugin
+## Install Plugin
 ```
 npm install capacitor-keep-screen-on
 ```
-Sync to Capacitor project
+## Sync to Capacitor project
 ```
 npx cap sync android|ios
 ```
 
-Add code (Android)
+## Add code (iOS)
+The code is automatically added with npx cap sync.
+
+## Add code (Android)
 Add the following to `MainActivity.java`
 (Receiver is in MainActivity for the convenience of the plugin)
 

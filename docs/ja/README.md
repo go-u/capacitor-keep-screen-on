@@ -17,21 +17,24 @@
 `FLAG_KEEP_SCREEN_ON` を利用しています。  
 これは公式ドキュメント[画面をオンのままにする](https://developer.android.com/training/scheduling/wakelock#screen)に記載された推奨方法です。
 
-## iOS(実装中)
+## iOS
 `UIApplication.shared.isIdleTimerDisabled` を利用しています。  
 これはAndroidの `FLAG_KEEP_SCREEN_ON` に[相当する方法](https://developer.apple.com/documentation/uikit/uiapplication/1623070-isidletimerdisabled)です。
 
 # Set up
-プラグインのインストール
+## プラグインのインストール
 ```
 npm install capacitor-keep-screen-on
 ```
-Capacitorプロジェクトに同期
+## Capacitorプロジェクトに同期
 ```
 npx cap sync android|ios
 ```
 
-コードの追加(Android)  
+## コードの追加(iOS)  
+npx cap sync でコードが自動追加されます。
+
+## コードの追加(Android)  
 `MainActivity.java` に以下を追加  
 (プラグインの都合上ReceiverをMainActivityに記載)
 
