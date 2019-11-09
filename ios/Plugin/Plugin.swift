@@ -7,11 +7,29 @@ import Capacitor
  */
 @objc(CapacitorKeepScreenOn)
 public class CapacitorKeepScreenOn: CAPPlugin {
-    
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
+
+    @objc func enable(_ call: CAPPluginCall) {
+        dispatch(call: call, mode: true)
+    }
+
+    @objc func disable(_ call: CAPPluginCall) {
+        dispatch(call: call, mode: false)
+    }
+
+    func dispatch(call: CAPPluginCall, mode: Bool) {
+        DispatchQueue.main.async {
+            UIApplication.shared.isIdleTimerDisabled = false
+
+            // for test dialog
+            let dialog = UIAlertController(title: "Dialog Title", message: "Message", preferredStyle: .alert)
+            dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            dialog.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.bridge.viewController.present(dialog, animated: true, completion: nil)
+         }
+
         call.success([
-            "value": value
+            "isEnabled": Bool(mode)
         ])
     }
+
 }
