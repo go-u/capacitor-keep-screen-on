@@ -21,9 +21,10 @@ public class CapacitorKeepScreenOn: CAPPlugin {
             UIApplication.shared.isIdleTimerDisabled = mode
 
             // for test dialog
-            let dialog = UIAlertController(title: "Dialog Title", message: "Message", preferredStyle: .alert)
-            dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            dialog.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            // let dialog = UIAlertController(title: "Dialog Title", message: "Message", preferredStyle: .alert)
+            // dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            // dialog.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
             self.bridge.viewController.present(dialog, animated: true, completion: nil)
          }
 
