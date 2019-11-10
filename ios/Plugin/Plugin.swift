@@ -18,7 +18,7 @@ public class CapacitorKeepScreenOn: CAPPlugin {
 
     func dispatch(call: CAPPluginCall, mode: Bool) {
         DispatchQueue.main.async {
-            UIApplication.shared.isIdleTimerDisabled = false
+            UIApplication.shared.isIdleTimerDisabled = mode
 
             // for test dialog
             let dialog = UIAlertController(title: "Dialog Title", message: "Message", preferredStyle: .alert)
