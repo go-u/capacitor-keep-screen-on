@@ -24,8 +24,7 @@ public class CapacitorKeepScreenOn: CAPPlugin {
             // let dialog = UIAlertController(title: "Dialog Title", message: "Message", preferredStyle: .alert)
             // dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             // dialog.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-            self.bridge.viewController.present(dialog, animated: true, completion: nil)
+            // self.bridge.viewController.present(dialog, animated: true, completion: nil)
          }
 
         call.success([
