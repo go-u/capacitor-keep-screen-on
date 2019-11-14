@@ -1,4 +1,4 @@
-name: Node CI
+name: Node CI Publish
 
 on: [push]
 
@@ -22,5 +22,19 @@ jobs:
           npm ci
           npm run build --if-present
 #          npm test
-        env:
-          CI: true
+#        env:
+#          CI: true
+
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install
+      - run: npm run build
+#      - run: npm publish
+#        env:
+#          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
