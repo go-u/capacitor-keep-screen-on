@@ -7,36 +7,64 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 
 // added for this plugin
-import android.content.Intent;
-import android.support.v4.content.LocalBroadcastManager;
+import android.app.Activity;
+import android.view.Window;
+import android.view.WindowManager;
 
 @NativePlugin()
 public class CapacitorKeepScreenOn extends Plugin {
-
-    // Keys For LoacalBroadcast
-    public static final String BROADCAST_KEY_KEEP_SCREEN_ON_PLUGIN = "KEEP_SCREEN_ON_PLUGIN";
+    private Activity activity;
 
     @PluginMethod()
-    public void enable(PluginCall call) {
-        dispatch(call, true);
+    public void enable(final PluginCall call) {
+        this.activity = getActivity();
+
+        getBridge().executeOnMainThread(new Runnable() {
+            @Override
+            public void run() {
+                Window window = getActivity().getWindow();
+                window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+                int flags = window.getAttributes().flags;
+                Boolean state = ((flags & WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON) != 0);
+                JSObject ret = new JSObject();
+                ret.put("isEnabled", state);
+                call.success(ret);
+            }
+        });
     }
 
     @PluginMethod()
-    public void disable(PluginCall call) {
-        dispatch(call, false);
+    public void disable(final PluginCall call) {
+        this.activity = getActivity();
+
+        getBridge().executeOnMainThread(new Runnable() {
+            @Override
+            public void run() {
+                Window window = getActivity().getWindow();
+                window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);;
+                int flags = window.getAttributes().flags;
+                Boolean state = ((flags & WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON) != 0);
+                JSObject ret = new JSObject();
+                ret.put("isEnabled", state);
+                call.success(ret);
+            }
+        });
     }
 
-    private void dispatch(PluginCall call, Boolean mode) {
-        Intent localBroadCastIntent = new Intent(BROADCAST_KEY_KEEP_SCREEN_ON_PLUGIN);
-        localBroadCastIntent.putExtra("MODE", mode);
+    @PluginMethod()
+    public void getState(final PluginCall call) {
+        this.activity = getActivity();
 
-        Boolean hasDispatched = LocalBroadcastManager.getInstance(this.getContext()).sendBroadcast(localBroadCastIntent);
-        JSObject ret = new JSObject();
-        if (hasDispatched) {
-            ret.put("isEnabled", mode);
-            call.success(ret);
-        } else {
-            call.error("LocalBroadcast dispatch failed");
-        }
+        getBridge().executeOnMainThread(new Runnable() {
+            @Override
+            public void run() {
+                Window window = getActivity().getWindow();
+                int flags = window.getAttributes().flags;
+                Boolean state = ((flags & WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON) != 0);
+                JSObject ret = new JSObject();
+                ret.put("isEnabled", state);
+                call.success(ret);
+            }
+        });
     }
 }
