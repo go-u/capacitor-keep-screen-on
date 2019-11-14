@@ -7,6 +7,7 @@ declare module "@capacitor/core" {
 export interface CapacitorKeepScreenOnPlugin {
   enable(): Promise<SetResult>;
   disable(): Promise<SetResult>;
+  getState(): Promise<SetResult>;
 }
 
 export class State{

@@ -16,6 +16,10 @@ export class CapacitorKeepScreenOnWeb extends WebPlugin implements CapacitorKeep
   async disable(): Promise<SetResult> {
     return Promise.resolve({ isEnabled: undefined });
   }
+
+  async getState(): Promise<SetResult> {
+    return Promise.resolve({ isEnabled: undefined });
+  }
 }
 
 const CapacitorKeepScreenOn = new CapacitorKeepScreenOnWeb();
