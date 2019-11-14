@@ -6,4 +6,5 @@
 CAP_PLUGIN(CapacitorKeepScreenOn, "CapacitorKeepScreenOn",
            CAP_PLUGIN_METHOD(enable, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(disable, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getState, CAPPluginReturnPromise);
 )

@@ -16,6 +16,12 @@ public class CapacitorKeepScreenOn: CAPPlugin {
         dispatch(call: call, mode: false)
     }
 
+    @objc func getState(_ call: CAPPluginCall) {
+        call.success([
+            "isEnabled": UIApplication.shared.isIdleTimerDisabled
+        ])
+    }
+
     func dispatch(call: CAPPluginCall, mode: Bool) {
         DispatchQueue.main.async {
             UIApplication.shared.isIdleTimerDisabled = mode
