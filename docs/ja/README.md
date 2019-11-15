@@ -52,6 +52,12 @@ public class MainActivity extends BridgeActivity {
       // Ex: add(TotallyAwesomePlugin.class);
        add(CapacitorKeepScreenOn.class);
     }});
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!! comment out this block if exist (this cause error) !!!
+//    if (BuildConfig.DEBUG) {
+//      EnableHttpsSelfSigned.enable(findViewById(R.id.webview));
+//    }
 ```
 
 # Usage
