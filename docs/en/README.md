@@ -78,6 +78,9 @@ CapacitorKeepScreenOn.enable()
 
 // disable
 CapacitorKeepScreenOn.disable()
+
+// get current state
+CapacitorKeepScreenOn.getState()
 ```
 
 # Recommeded Usage
