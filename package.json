@@ -13,12 +13,12 @@
   "author": "go",
   "license": "MIT",
   "dependencies": {
-    "@capacitor/core": "latest"
+    "@capacitor/core": "^1.4.0"
   },
   "devDependencies": {
-    "typescript": "^3.2.4",
-    "@capacitor/ios": "latest",
-    "@capacitor/android": "latest"
+    "@capacitor/android": "^1.4.0",
+    "@capacitor/ios": "^1.4.0",
+    "typescript": "^3.7.3"
   },
   "files": [
     "dist/",
