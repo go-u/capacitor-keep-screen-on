@@ -12,12 +12,12 @@
   },
   "author": "go",
   "license": "MIT",
-  "dependencies": {
-    "@capacitor/core": "^2.0.1"
+  "peerDependencies": {
+    "@capacitor/core": "^2.0.1",
+    "@capacitor/android": "^2.0.1",
+    "@capacitor/ios": "^2.0.1"
   },
   "devDependencies": {
-    "@capacitor/android": "^2.0.1",
-    "@capacitor/ios": "^2.0.1",
     "typescript": "^3.8.3"
   },
   "files": [
