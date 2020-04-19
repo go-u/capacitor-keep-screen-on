@@ -7,7 +7,7 @@
 <h1 align="center">capacitor-keep-screen-on</h1>
 
 # Documentation
-[Japanese versione here](https://github.com/go-u/capacitor-keep-screen-on/tree/master/docs/ja)
+[Japanese version here](https://github.com/go-u/capacitor-keep-screen-on/tree/master/docs/ja)
 
 # What's this?
 Capacitor plugin to prevent automatic screen off.
