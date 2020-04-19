@@ -18,6 +18,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: install capacitor
+        run: npm install @capacitor/core @capacitor/android @capacitor/ios
       - name: npm install, build, and test
         run: |
           npm ci
