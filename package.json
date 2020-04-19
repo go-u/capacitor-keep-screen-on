@@ -13,11 +13,11 @@
   "author": "go",
   "license": "MIT",
   "dependencies": {
-    "@capacitor/core": "^1.5.1"
+    "@capacitor/core": "^2.0.1"
   },
   "devDependencies": {
-    "@capacitor/android": "^1.5.1",
-    "@capacitor/ios": "^1.5.1",
+    "@capacitor/android": "^2.0.1",
+    "@capacitor/ios": "^2.0.1",
     "typescript": "^3.8.3"
   },
   "files": [
