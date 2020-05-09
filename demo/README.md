@@ -4,23 +4,14 @@ Demo App for capacitor plugin
 
 ## Install the dependencies
 ```bash
-yarn
+yarn install
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+### Start the app in development mode and run Android Studio / Xcode
 ```bash
-quasar dev
-```
+// Android
+npx quasar dev -m capacitor -T android
 
-### Lint the files
-```bash
-yarn run lint
+// iOS
+npx quasar dev -m capacitor -T ios
 ```
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
