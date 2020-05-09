@@ -5,8 +5,10 @@
   "author": "go",
   "private": true,
   "dependencies": {
-    "@capacitor/cli": "^2.0.1",
-    "@capacitor/core": "^2.0.1",
+    "@capacitor/android": "^2.1.0",
+    "@capacitor/cli": "^2.1.0",
+    "@capacitor/core": "^2.1.0",
+    "@capacitor/ios": "^2.1.0",
     "capacitor-keep-screen-on": "file:../.."
   }
 }
