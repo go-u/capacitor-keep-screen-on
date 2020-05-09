@@ -6,6 +6,10 @@
 <p align="center"><img src="../logo.png" alt="Capacitor Keep Screen On logo"></p>
 <h1 align="center">capacitor-keep-screen-on</h1>
 
+# :star: Important :star: 
+**For Android X, use v1.0.0 or later.**  
+(v0.0.x is for before Android X)
+
 # Documentation
 [Japanese version here](https://github.com/go-u/capacitor-keep-screen-on/tree/master/docs/ja)
 
