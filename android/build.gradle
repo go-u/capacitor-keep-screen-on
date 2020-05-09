@@ -51,6 +51,6 @@ dependencies {
       todo: replace to androidx and androidx LocalBroadcastManager is deprecated. Replace to LiveData or reactive streams.
      */
     // for getActivity() method
-    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
 }
 
