@@ -7,7 +7,7 @@
 <h1 align="center">capacitor-keep-screen-on</h1>
 
 # :star: Important :star: 
-**AndroidXのライブラリ向けに開発する場合v1.0.0以降を使ってください。**  
+**AndroidX向けに開発する場合v1.0.0以降を使ってください。**  
 (v0.0.xはAndroidX以前の古い環境用です)
 
 # Documentation
