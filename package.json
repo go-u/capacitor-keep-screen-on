@@ -1,6 +1,6 @@
 {
   "name": "capacitor-keep-screen-on",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.6",
   "description": "capacitor plugin for keeping screen on ",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
