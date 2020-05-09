@@ -87,3 +87,20 @@ CapacitorKeepScreenOn.getState()
 例えば動画再生にこのプラグインを使う場合は以下のような配慮をしましょう。  
 - 再生開始時に`enable()`
 - 再生終了時に`disable()`
+
+# Demoについて
+このリポジトリにはVueのフレームワークである [Quasarを使ったAndroid/iOSのデモアプリ](https://github.com/go-u/capacitor-keep-screen-on/tree/master/demo) が含まれています。   
+Quasarは内部でCapacitorを利用しています。デモは以下のコマンドで動かせます。  
+```
+// Install Dependencies
+cd ./demo
+yarn install
+
+// Android Demo (Build SPA / start Android Studio)
+npx quasar dev -m capacitor -T android
+
+// iOS Demo (Build SPA / start Xcode)
+npx quasar dev -m capacitor -T ios
+```
+
+上記のコマンドを実行した後、Android Studio / Xcode が立ち上がるのでそれぞれでアプリを実行して下さい。

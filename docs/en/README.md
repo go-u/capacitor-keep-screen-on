@@ -87,3 +87,21 @@ CapacitorKeepScreenOn.getState()
 For example, consider the following when using this plugin with video player.
 - `Enable()` at start of playback
 - `Disable()` at end of playback
+
+# About Demo
+This repository contains [Android / iOS demo app](https://github.com/go-u/capacitor-keep-screen-on/tree/master/demo).  
+The Demo made with Vue's framework Quasar. Quasar uses Capacitor internally.  
+You can run the demo with the following command.
+```
+// Install Dependencies
+cd ./demo
+yarn install
+
+// Android Demo (Build SPA / start Android Studio)
+npx quasar dev -m capacitor -T android
+
+// iOS Demo (Build SPA / start Xcode)
+npx quasar dev -m capacitor -T ios
+```
+
+After executing the above command, Android Studio / Xcode will start up, so please execute the application respectively.
