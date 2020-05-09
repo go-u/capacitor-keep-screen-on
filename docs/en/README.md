@@ -88,7 +88,7 @@ For example, consider the following when using this plugin with video player.
 - `Enable()` at start of playback
 - `Disable()` at end of playback
 
-# Demoについて
+# About Demo
 This repository contains [Android / iOS demo app](https://github.com/go-u/capacitor-keep-screen-on/tree/master/demo).  
 The Demo made with Vue's framework Quasar. Quasar uses Capacitor internally.  
 You can run the demo with the following command.
